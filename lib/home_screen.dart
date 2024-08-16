@@ -28,23 +28,23 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: blackColor,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
         leading: Icon(
           IconlyLight.category,
-          color: whiteColor,
+          color: blackColor,
         ),
         actions: [
           Icon(
             IconlyLight.search,
-            color: whiteColor,
+            color: blackColor,
           ),
           const SizedBox(width: 12),
           Icon(
             IconlyLight.scan,
-            color: whiteColor,
+            color: blackColor,
           ),
           const SizedBox(width: 8),
         ],
@@ -56,40 +56,42 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(
               'Create a Personal QR-Code',
               style: GoogleFonts.raleway(
-                  fontSize: 32, fontWeight: FontWeight.bold, color: whiteColor),
+                  fontSize: 32, fontWeight: FontWeight.bold, color: blackColor),
             ),
             const SizedBox(height: 40),
             Container(
-              height: 400,
-              width: double.infinity,
+              height: 290,
+              width: 290,
               decoration: BoxDecoration(
                 color: whiteColor,
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: RepaintBoundary(
-                key: qrKey,
-                child: QrImageView(
-                  data: qrData,
-                  version: QrVersions.auto,
-                  size: 300,
-                  dataModuleStyle: QrDataModuleStyle(
-                    dataModuleShape: QrDataModuleShape.circle,
-                    color: blackColor,
-                  ),
-                  eyeStyle: QrEyeStyle(
-                    eyeShape: QrEyeShape.square,
-                    color: blackColor,
+              child: Center(
+                child: RepaintBoundary(
+                  key: qrKey,
+                  child: QrImageView(
+                    data: qrData,
+                    version: QrVersions.auto,
+                    size: 270,
+                    dataModuleStyle: QrDataModuleStyle(
+                      dataModuleShape: QrDataModuleShape.circle,
+                      color: blackColor,
+                    ),
+                    eyeStyle: QrEyeStyle(
+                      eyeShape: QrEyeShape.square,
+                      color: blackColor,
+                    ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 25),
+            const SizedBox(height: 40),
             TextFormField(
               controller: qrDataController,
               style: GoogleFonts.raleway(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
-                color: whiteColor,
+                color: blackColor,
               ),
               cursorColor: buttonColor,
               decoration: InputDecoration(
@@ -98,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Radius.circular(20),
                   ),
                   borderSide: BorderSide(
-                    color: buttonColor,
+                    color: blackColor,
                   ),
                 ),
                 border: OutlineInputBorder(
@@ -106,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Radius.circular(20),
                   ),
                   borderSide: BorderSide(
-                    color: buttonColor,
+                    color: blackColor,
                   ),
                 ),
               ),
@@ -124,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 80,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: buttonColor,
+                  color: blackColor,
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Center(
@@ -133,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: GoogleFonts.raleway(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
-                      color: blackColor,
+                      color: whiteColor,
                     ),
                   ),
                 ),
